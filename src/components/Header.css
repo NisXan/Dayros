@@ -1,0 +1,44 @@
+.header {
+  background: #333336;
+  padding: 20px;
+}
+
+.header .menu {
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.header li {
+  list-style: none;
+  line-height: 1;
+}
+
+.header li a {
+  letter-spacing: 10px;
+  font-size: 28px;
+  text-transform: uppercase;
+}
+
+.header li::first-letter {
+  color: #3498DB;
+} 
+
+.header a {
+  cursor: pointer;
+  color: #fff;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.header a:hover,
+.header a:focus {
+  color: #3498DB;
+}
+
+@media (max-width: 424px) {
+  .header .menu {
+    justify-content: left;
+  }
+}
