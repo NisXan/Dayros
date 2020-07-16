@@ -1,6 +1,4 @@
 import Unsplash, { toJson } from 'unsplash-js';
-import fetch from 'node-fetch';
-global.fetch = fetch;
 
 export const unsplash = new Unsplash({
   accessKey: "K2zcIGxjEXNJYPl4oq8rspBhg0DISO3qTM02XmXRrDc",

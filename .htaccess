@@ -1,0 +1,17 @@
+Options +FollowSymLinks
+RewriteEngine On
+RewriteCond %{ENV:HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^ https://dayros.nisxan.ru%{REQUEST_URI} [L,NE,R=301]
+
+<FilesMatch ".(htaccess|htpasswd|ini|phps|fla|psd|log|sh|json)$">
+Order Allow,Deny
+Deny from all
+</FilesMatch>
+
+# Cache-Control
+<ifModule mod_headers.c>
+<filesMatch "\.(html|htm|php|woff|woff2|jpg|jpeg|png|gif|svg|js|css)$">
+Header set Cache-Control "max-age=31536000, public"
+</filesMatch>
+</ifModule>
