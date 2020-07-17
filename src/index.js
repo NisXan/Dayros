@@ -10,14 +10,13 @@ import { createBrowserHistory } from 'history';
 
 import '../public/favicon.ico';
 
-let initialState = [];
+const initialState = [];
 
 const store = createStore(
   reducers,
   initialState,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
-
 
 const history = createBrowserHistory();
 const code = location.search.split('code=')[1];

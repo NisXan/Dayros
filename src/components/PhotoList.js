@@ -50,29 +50,29 @@ class PhotoList extends React.Component {
 
   render() {
     return (
-      <div className="main-container">
-        <Masonry className="list-photos">
+      <div className='main-container'>
+        <Masonry className='list-photos'>
           {
             this.props.images.map((img, i) => {              
               let date = img.created_at[8] + img.created_at[9] + '.' + img.created_at[5] + img.created_at[6] + '.' + img.created_at[0] + img.created_at[1] + img.created_at[2] + img.created_at[3];
               let liked = (img.liked_by_user) ? 'btn btn-like liked' : 'btn btn-like';
               
               return (
-                <div key={img.id} className="list-photos__item">
+                <div key={img.id} className='list-photos__item'>
                   <img 
                     src={img.urls.small} 
-                    className="list-photos__item--img" alt={img.description} />
-                  <div className="list-photos__item--stats">
-                    <a href={img.user.links.html} className="author" >
-                      <img src={img.user.profile_image.small} alt={img.user.first_name} className="author__img" />
-                      <span className="author__name" >                
+                    className='list-photos__item--img' alt={img.description} />
+                  <div className='list-photos__item--stats'>
+                    <a href={img.user.links.html} className='author' >
+                      <img src={img.user.profile_image.small} alt={img.user.first_name} className='author__img' />
+                      <span className='author__name' >                
                         {img.user.first_name}
                       </span>
                     </a>
-                    <time className="date" dateTime={img.created_at}>{date}</time>
-                    <button className={ liked } type="button" onClick={event => this.props.likedPhoto(img.id)}> {img.likes}</button>
-                    <Link to={"/photo/" + i} className="photo-detail">
-                      <button className="btn btn-detail">
+                    <time className='date' dateTime={img.created_at}>{date}</time>
+                    <button className={ liked } type='button' onClick={event => img.liked_by_user ? this.props.unlikedPhoto(img.id) : this.props.likedPhoto(img.id)}> {img.likes}</button>
+                    <Link to={'/photo/' + i} className='photo-detail'>
+                      <button className='btn btn-detail'>
                         Подробнее
                       </button>
                     </Link>
@@ -82,9 +82,9 @@ class PhotoList extends React.Component {
             })
           }
         </Masonry>      
-        <button className="btn btn-load" type="button" onClick={this.loadImages}>Показать ещё</button>
+        <button className='btn btn-load' type='button' onClick={this.loadImages}>Показать ещё</button>
       </div>
-    )          
+    )
   }
 }  
 

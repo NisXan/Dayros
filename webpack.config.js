@@ -1,5 +1,4 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: "./src/index.js",
@@ -46,12 +45,10 @@ module.exports = {
     port: 3000,
   },
 
-  plugins: [  
-    new CleanWebpackPlugin(),
-    
+  plugins: [    
     new HtmlWebpackPlugin({
       template: __dirname + '/public/index.html',
-	  favicon: __dirname + '/public/favicon.ico',
+	    favicon: __dirname + '/public/favicon.ico',
       inject: 'head',
       scriptLoading: 'defer'      
     })

@@ -11,3 +11,10 @@ export const likedPhoto = state => {
     id: state
   }
 }
+
+export const unlikedPhoto = state => {
+  return {
+    type: 'UNLIKED_PHOTO',
+    id: state
+  }
+}
