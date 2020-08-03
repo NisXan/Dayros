@@ -22,7 +22,7 @@ const history = createBrowserHistory();
 const code = location.search.split('code=')[1];
 
 if (code) {  
-  setAccessTokenUnplash(code);  
+  setAccessTokenUnplash(code);
   history.push('/');
 }
 
@@ -33,9 +33,8 @@ if (localStorage.getItem('token') === 'undefined' || localStorage.getItem('token
     <Provider store = { store }>
       <Router history= { history }>
         <App />
-      </Router>        
+      </Router>
     </Provider>,
     document.getElementById('gallery')
   )
 }
-

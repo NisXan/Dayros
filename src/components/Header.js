@@ -4,7 +4,6 @@ import { NavLink, Link} from 'react-router-dom';
 import './Header.css';
 
 const Header = (props) => {
-
   return (
     <header className='header'>
       <nav className='header__wrapper'>

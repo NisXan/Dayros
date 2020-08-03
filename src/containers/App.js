@@ -23,10 +23,10 @@ let App = (props) => {
         <Route path='/photo/:id' render={() => (
           <PhotoDetails images={images} likedPhoto={likedPhoto} unlikedPhoto={unlikedPhoto} />
         )}/>
-        <Redirect to='/' />      
+        <Redirect to='/' />
       </Switch>
     </div>
-  )         
+  )
 }
 
 const mapStateToProps = state => {  

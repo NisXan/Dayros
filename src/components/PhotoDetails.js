@@ -15,13 +15,13 @@ const PhotoDetails = (props) => {
       <div className='details__container--info'>
         <a href={images[id].user.links.html} className='author' >
           <img src={images[id].user.profile_image.small} alt={images[id].user.name} className='author__img' />
-          <span className='author__name' >                
+          <span className='author__name' >
             {images[id].user.name}
           </span>
         </a>
         <time className='date' dateTime={images[id].created_at}>{date}</time>
         <button className={ liked } type='button' onClick={event => images[id].liked_by_user ? unlikedPhoto(images[id].id) : likedPhoto(images[id].id)}>{images[id].likes}</button>
-      </div>      
+      </div>
       <img 
         className='details__container--img'
         src={images[id].urls.regular}
@@ -31,7 +31,7 @@ const PhotoDetails = (props) => {
 
   return (
     <div className='main-container'>
-      <Link to='/' className='back-link'>Назад</Link>      
+      <Link to='/' className='back-link'>Назад</Link>
       {details}
     </div>
   )

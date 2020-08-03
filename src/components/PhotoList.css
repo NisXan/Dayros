@@ -76,7 +76,7 @@
   font-size: 16px;
 }
 
-.btn {  
+.btn {
   border: none;  
   font-size: 16px;
 }
@@ -91,10 +91,10 @@
   z-index: 1;
 }
 
-.btn-like:before {  
+.btn-like:before {
   content: '\2661';
   font-family: 'icons';
-  margin-right: 6px;  
+  margin-right: 6px;
 }
 
 .btn-like.liked {
@@ -139,7 +139,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translateY(-50%) translateX(-50%);  
+  transform: translateY(-50%) translateX(-50%);
 }
 @media (max-width: 1500px) {
   .list-photos__item {
