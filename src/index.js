@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { Router } from 'react-router-dom';
 import App from './containers/App.js';
 import reducers from './reducers/reducers.js';
-import { setAccessTokenUnplash, authenticationUrl } from './unsplash/unsplash.js'; 
+import { setAccessTokenUnplash, authenticationUrl, setBearerToken } from './unsplash/unsplash.js'; 
 import { createBrowserHistory } from 'history';
 
 import '../public/favicon.ico';
@@ -29,6 +29,7 @@ if (code) {
 if (localStorage.getItem('token') === 'undefined' || localStorage.getItem('token') === ''|| !localStorage.getItem('token')) {
   location.assign(authenticationUrl);
 } else {
+  setBearerToken(localStorage.getItem('token'));
   ReactDOM.render(
     <Provider store = { store }>
       <Router history= { history }>
