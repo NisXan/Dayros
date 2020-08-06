@@ -30,7 +30,6 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
-    "history": "^4.10.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-masonry-component": "^6.2.1",
