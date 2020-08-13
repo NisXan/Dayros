@@ -12,24 +12,27 @@
 
 .header li {
   list-style: none;
-  line-height: 1;
 }
 
-.header li a {
+.menu__logo a {
   letter-spacing: 10px;
   font-size: 28px;
   text-transform: uppercase;
-}
-
-.header li::first-letter {
-  color: #3498DB;
-} 
-
-.header a {
   cursor: pointer;
   color: #fff;
-  font-size: 20px;
   line-height: 28px;
+}
+
+.menu__logo::first-letter {
+  color: #3498DB;
+}
+
+.menu__auth {
+  position: absolute;
+  right: 20px;
+  color: #fff;
+  font-size: 20px;
+  line-height: 30px;
 }
 
 .header a:hover,

@@ -5,7 +5,11 @@ module.exports = {
 
   output: {
     path: __dirname + '/build',    
-    filename: 'js/build.js'
+    filename: 'js/build.js',
+	publicPath: '/',
+  },
+  devServer: {
+    historyApiFallback: true
   },
 
   module: {

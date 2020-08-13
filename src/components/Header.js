@@ -4,11 +4,25 @@ import { NavLink, Link} from 'react-router-dom';
 import './Header.css';
 
 const Header = (props) => {
+  const { logOut, logIn } = props;
   return (
     <header className='header'>
       <nav className='header__wrapper'>
         <ul className='menu'>
-          <li><NavLink to='/'>Dayros</NavLink></li>
+          <li className='menu__logo'><NavLink to='/'>Dayros</NavLink></li>          
+          { (localStorage.getItem('token') === 'undefined' || localStorage.getItem('token') === '' || !localStorage.getItem('token')) ?
+            <li onClick={()=>logIn()} className='menu__auth'>
+              <Link to="/">
+                Войти
+              </Link>
+            </li>
+          :
+            <li onClick={()=>logOut()} className='menu__auth'>
+              <Link to="/">
+                Выйти
+              </Link>
+            </li>
+          }
         </ul>
       </nav>
     </header>

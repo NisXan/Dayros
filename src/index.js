@@ -5,7 +5,8 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from './containers/App.js';
 import reducers from './reducers/reducers.js';
-import { setAccessTokenUnplash, authenticationUrl, setBearerToken } from './unsplash/unsplash.js'; 
+import { setAccessTokenUnplash, authenticationUrl } from './unsplash/unsplash.js'; 
+import { createBrowserHistory } from 'history';
 
 import '../public/favicon.ico';
 
@@ -17,22 +18,19 @@ export const store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
+const history = createBrowserHistory();
 const code = location.search.split('code=')[1];
 
 if (code) {  
   setAccessTokenUnplash(code);
+  history.push('/');
 }
 
-if (localStorage.getItem('token') === 'undefined' || localStorage.getItem('token') === ''|| !localStorage.getItem('token')) {
-  location.assign(authenticationUrl);
-} else {
-  setBearerToken(localStorage.getItem('token'));
-  ReactDOM.render(
-    <Provider store = { store }>
-      <Router>
-        <App />
-      </Router>
-    </Provider>,
-    document.getElementById('gallery')
-  )
-}
+ReactDOM.render(
+  <Provider store = { store }>
+    <Router>
+      <App />
+    </Router>
+  </Provider>,
+  document.getElementById('gallery')
+)

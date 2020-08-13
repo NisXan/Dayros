@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 
 import './PhotoDetails.css';
 
@@ -31,7 +31,7 @@ const PhotoDetails = (props) => {
 
   return (
     <div className='main-container'>
-      <Link to='/' className='back-link'>Назад</Link>
+      <NavLink to='/' className='back-link'>Назад</NavLink>
       {details}
     </div>
   )

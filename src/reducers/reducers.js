@@ -1,4 +1,4 @@
-import { ADD_IMAGES, LIKED_PHOTO, UNLIKED_PHOTO } from '../constants.js';
+import { ADD_IMAGES, LIKED_PHOTO, UNLIKED_PHOTO, LOG_OUT, LOG_IN } from '../constants.js';
 
 const reducers = (state = [], action) => {
   switch(action.type) {
@@ -47,6 +47,14 @@ const reducers = (state = [], action) => {
         }
         return img;
       })
+    case LOG_OUT:
+      return{ 
+        ...state,
+      };
+    case LOG_IN:
+      return{ 
+        ...state,
+      };
 
     default:
       return state;
