@@ -32,9 +32,8 @@ let App = (props) => {
   };
 
   const logIn = () => {
-    logInAction();
     location.assign(authenticationUrl);
-
+    logInAction();
   }
 
   const logOut = () => {
@@ -46,20 +45,20 @@ let App = (props) => {
     <>
       <Header logIn={logIn} logOut={logOut}/>
       <Switch>
-      {
-        (localStorage.getItem('token') != 'undefined' && localStorage.getItem('token') != '' && localStorage.getItem('token') != null ) ?
-          <>
-            <Route exact path='/' render={() => (
-              <PhotoList images={images} addImages={addImages} likedPhoto={likeUpdate} unlikedPhoto={likeUpdate} />
-            )}/>
-            <Route path='/photo/:id' render={() => (
-              <PhotoDetails images={images} likedPhoto={likeUpdate} unlikedPhoto={likeUpdate} />
-            )}/>
-          </>          
-        :
-          <Route exact path='/'>
-            <Auth logIn={logIn}/>
-          </Route>
+        {
+          (localStorage.getItem('token') != 'undefined' && localStorage.getItem('token') != '' && localStorage.getItem('token') != null ) ?
+            <>
+              <Route exact path='/' render={() => (
+                <PhotoList images={images} addImages={addImages} likedPhoto={likeUpdate} unlikedPhoto={likeUpdate} />
+              )}/>
+              <Route path='/photo/:id' render={() => (
+                <PhotoDetails images={images} likedPhoto={likeUpdate} unlikedPhoto={likeUpdate} />
+              )}/>
+            </>          
+          :
+            <Route exact path='/'>
+              <Auth logIn={logIn}/>
+            </Route>
         }
         <Redirect to='/' />
       </Switch>
