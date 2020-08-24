@@ -31,7 +31,7 @@ const PhotoDetails = (props) => {
 
   return (
     <div className='main-container'>
-      <NavLink to='/' className='back-link'>Назад</NavLink>
+      <NavLink to='/photos' className='back-link'>Назад</NavLink>
       {details}
     </div>
   )

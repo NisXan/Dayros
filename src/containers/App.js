@@ -1,9 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Switch, Route, Redirect } from 'react-router-dom';
-
 import './App.css';
-
 import PhotoList from '../components/PhotoList.js';
 import PhotoDetails from '../components/PhotoDetails.js';
 import Header from '../components/Header.js';
@@ -45,22 +43,15 @@ let App = (props) => {
     <>
       <Header logIn={logIn} logOut={logOut}/>
       <Switch>
-        {
-          (localStorage.getItem('token') != 'undefined' && localStorage.getItem('token') != '' && localStorage.getItem('token') != null ) ?
-            <>
-              <Route exact path='/' render={() => (
-                <PhotoList images={images} addImages={addImages} likedPhoto={likeUpdate} unlikedPhoto={likeUpdate} />
-              )}/>
-              <Route path='/photo/:id' render={() => (
-                <PhotoDetails images={images} likedPhoto={likeUpdate} unlikedPhoto={likeUpdate} />
-              )}/>
-            </>          
-          :
-            <Route exact path='/'>
-              <Auth logIn={logIn}/>
-            </Route>
-        }
-        <Redirect to='/' />
+        <Route exact path='/photos' render={() => (
+          <PhotoList images={images} addImages={addImages} likedPhoto={likeUpdate} unlikedPhoto={likeUpdate} />
+        )}/>
+        <Route path='/photos/:id' render={() => (
+          <PhotoDetails images={images} likedPhoto={likeUpdate} unlikedPhoto={likeUpdate} />
+        )}/>
+        <Route exact path='/'>
+          <Auth logIn={logIn}/>
+        </Route>
       </Switch>
     </>
   )

@@ -71,7 +71,7 @@ class PhotoList extends React.Component {
                     </a>
                     <time className='date' dateTime={img.created_at}>{date}</time>
                     <button className={ liked } type='button' onClick={event => img.liked_by_user ? this.props.unlikedPhoto(img.id) : this.props.likedPhoto(img.id)}> {img.likes}</button>
-                    <Link to={'/photo/' + i} className='photo-detail'>
+                    <Link to={'/photos/' + i} className='photo-detail'>
                       <button className='btn btn-detail'>
                         Подробнее
                       </button>

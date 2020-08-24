@@ -22,7 +22,7 @@ const reducers = (state = [], action) => {
               links: {html: img.user.links.html},
             },
             created_at: img.created_at
-          }          
+          }
         }
         return img;
       })  
