@@ -25,6 +25,8 @@
     "file-loader": "^6.0.0",
     "history": "^4.10.1",
     "html-webpack-plugin": "^4.2.0",
+    "react-router": "^5.2.0",
+    "react-router-redux": "^4.0.8",
     "style-loader": "^1.2.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
@@ -35,7 +37,6 @@
     "react-dom": "^16.13.1",
     "react-masonry-component": "^6.2.1",
     "react-redux": "^7.2.0",
-    "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
     "unsplash-js": "^6.0.0"

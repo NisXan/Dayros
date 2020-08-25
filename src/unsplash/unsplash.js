@@ -1,9 +1,9 @@
 import Unsplash, { toJson } from 'unsplash-js';
 
 export const unsplash = new Unsplash({
-  accessKey: 'jjol7KDbrcx_PZUboYqtsq2rGjYHciCkmC5Pxl89z0E',
-  secret: 'HHjqrDfm1vlRaf_0Y8mInPgHG_jp26UioO_gmFcFOi4',
-  callbackUrl: 'http://localhost:3000/photos'
+  accessKey: 'K2zcIGxjEXNJYPl4oq8rspBhg0DISO3qTM02XmXRrDc',
+  secret: 'k83A6Ff91VSeVg_E_RKqACPtXHcvuY-pNJ6xvw9oFkc',
+  callbackUrl: 'https://dayros.nisxan.ru/'
 });
 
 export const authenticationUrl = unsplash.auth.getAuthenticationUrl([

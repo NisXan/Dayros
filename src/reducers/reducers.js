@@ -7,7 +7,7 @@ const reducers = (state = [], action) => {
        
     case LIKED_PHOTO: 
       return state.map((img) => {
-        if(img.id === action.id) {
+        if (img.id === action.id) {
           return {
             id: action.id,
             likes: action.likes,

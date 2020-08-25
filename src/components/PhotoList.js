@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Masonry from 'react-masonry-component';
-import { listPhoto } from '../unsplash/unsplash.js';
+import { setAccessTokenUnplash, listPhoto } from '../unsplash/unsplash.js';
 
 import './PhotoList.css';
 
@@ -10,9 +10,11 @@ let isResizeble = false;
 class PhotoList extends React.Component {
   constructor(props) {
     super(props);
-
     this.loadImages = this.loadImages.bind(this);
     this.pageScroll = this.pageScroll.bind(this);
+    if (localStorage.getItem('token') === 'undefined' || localStorage.getItem('token') === '' || !localStorage.getItem('token')) {
+      this.setAccessToken();
+    }
   }
 
   componentDidMount() {
@@ -27,6 +29,14 @@ class PhotoList extends React.Component {
   componentWillUnmount() {
     window.removeEventListener('scroll', this.pageScroll);
   } 
+
+  setAccessToken() {
+    const code = location.search.split('code=')[1];
+
+    if (code) {
+        setAccessTokenUnplash(code);
+    }
+  }
 
   loadImages() {
     const start = this.props.images.length + 1;
