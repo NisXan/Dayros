@@ -40,27 +40,21 @@ let App = (props) => {
   }
 
   return (
-    <>
-
-
-        <Switch>
-
-        <Route exact path='/'>
-<Header logIn={logIn} logOut={logOut}/>
-          <Auth logIn={logIn}/>
-        </Route>
-          <Route path='/photo'>
-<Header logIn={logIn} logOut={logOut}/>
-            <PhotoList images={images} addImages={addImages} likedPhoto={likedPhoto} />
-          </Route>
-
-          <Route path='/photos/:id'>
-<Header logIn={logIn} logOut={logOut}/>
-            <PhotoDetails images={images} likedPhoto={likedPhoto} />
-          </Route>
-          <Redirect to='/photo' />
-        </Switch>
-    </>
+    <Switch>
+      <Route exact path='/'>
+        <Header logIn={logIn} logOut={logOut}/>
+        <Auth logIn={logIn}/>
+      </Route>
+      <Route path='/photo'>
+        <Header logIn={logIn} logOut={logOut}/>
+        <PhotoList images={images} addImages={addImages} likedPhoto={likeUpdate} unlikedPhoto={likeUpdate} />
+      </Route>
+      <Route path='/photos/:id'>
+        <Header logIn={logIn} logOut={logOut}/>
+        <PhotoDetails images={images} likedPhoto={likeUpdate} unlikedPhoto={likeUpdate} />
+      </Route>
+      <Redirect to='/photo' />
+    </Switch>
   )
 }
 
