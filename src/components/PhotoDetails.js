@@ -50,7 +50,7 @@ class PhotoDetails extends React.Component {
                       </span>
                     </a>
                     <time className='date' dateTime={img.created_at}>{date}</time>
-                    <button className={ liked } type='button' onClick={event => img.liked_by_user ? unlikedPhoto(img.id) : likedPhoto(img.id)}>{img.likes}</button>
+                    <button className={ liked } type='button' onClick={event => img.liked_by_user ? this.props.unlikedPhoto(img.id) : this.props.likedPhoto(img.id)}> {img.likes}</button>
                   </div>
                   <img 
                     className='details__container--img'
