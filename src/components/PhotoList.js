@@ -34,7 +34,7 @@ class PhotoList extends React.Component {
     const code = location.search.split('code=')[1];
 
     if (code) {
-        setAccessTokenUnplash(code);
+      setAccessTokenUnplash(code);
     }
   }
 

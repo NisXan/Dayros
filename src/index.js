@@ -26,7 +26,7 @@ const code = location.search.split('code=')[1];
 
 if (code) {  
   setAccessTokenUnplash(code);
-  history.push('/photo');
+  history.push('/photos');
 }
 
 ReactDOM.render(

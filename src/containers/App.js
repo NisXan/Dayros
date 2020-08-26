@@ -45,15 +45,15 @@ let App = (props) => {
         <Header logIn={logIn} logOut={logOut}/>
         <Auth logIn={logIn}/>
       </Route>
-      <Route path='/photo'>
+      <Route exact path='/photos'>
         <Header logIn={logIn} logOut={logOut}/>
         <PhotoList images={images} addImages={addImages} likedPhoto={likeUpdate} unlikedPhoto={likeUpdate} />
       </Route>
       <Route path='/photos/:id'>
         <Header logIn={logIn} logOut={logOut}/>
-        <PhotoDetails images={images} likedPhoto={likeUpdate} unlikedPhoto={likeUpdate} />
+        <PhotoDetails images={images} addImages={addImages} likedPhoto={likeUpdate} unlikedPhoto={likeUpdate} />
       </Route>
-      <Redirect to='/photo' />
+      <Redirect to='/photos' />
     </Switch>
   )
 }
