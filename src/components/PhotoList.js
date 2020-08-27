@@ -73,7 +73,7 @@ class PhotoList extends React.Component {
                     src={img.urls.small} 
                     className='list-photos__item--img' alt={img.description} />
                   <div className='list-photos__item--stats'>
-                    <a href={img.user.links.html} className='author' >
+                    <a href={img.user.links.html} className='author' target='_blank'>
                       <img src={img.user.profile_image.small} alt={img.user.first_name} className='author__img' />
                       <span className='author__name' >
                         {img.user.first_name}

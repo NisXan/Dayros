@@ -43,7 +43,7 @@ class PhotoDetails extends React.Component {
               return (
                 <div key={img.id} className='details__container'>
                   <div className='details__container--info'>
-                    <a href={img.user.links.html} className='author' >
+                    <a href={img.user.links.html} className='author' target='_blank'>
                       <img src={img.user.profile_image.small} alt={img.user.name} className='author__img' />
                       <span className='author__name' >
                         {img.user.name}
